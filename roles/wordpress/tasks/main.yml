@@ -7,7 +7,6 @@
     - unarchive:
        src:        /tmp/wordpress.tar.gz
        dest:       /tmp
-       remote_src: yes
     - copy:
         src:       "wp-config.php"
         dest:      /tmp/wordpress/
