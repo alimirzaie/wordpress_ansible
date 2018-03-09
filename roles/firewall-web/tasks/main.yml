@@ -1,0 +1,17 @@
+---
+# tasks file for firewall-web HTTP/(s)
+    - name:        Restart firewalld deamon
+      service: name=firewalld state=start enabled=yes
+    - name:        firewall https set open to permanent
+      firewalld:
+       service:    https
+       permanent:  true
+       state:      enabled
+    - name:        firewall http set open to permanent
+      firewalld:
+       service:    http
+       permanent:  true
+       state:      enabled
+    - name:        Restart firewalld deamon
+      service: name=firewalld state=restarted enabled=yes
+...

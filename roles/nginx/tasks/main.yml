@@ -1,0 +1,10 @@
+---
+# tasks file for nginx
+- name: install nginx ensure started and enabled
+  yum: name=nginx state=present
+- copy:
+    src:        "nginx.conf"
+    dest:       /etc/nginx/nginx.conf
+  notify: 
+   - Restart nginx
+...

@@ -1,0 +1,7 @@
+---
+# tasks file for EPEL-release
+    - name:        Add the EPEL repository
+      yum:         name=epel-release state=present
+    - name:        Install base group
+      yum:         name=@base state=present
+...

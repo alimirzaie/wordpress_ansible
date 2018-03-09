@@ -1,0 +1,22 @@
+---
+# tasks file for php
+  - name:        Install PHP ensure started and enabled
+    yum:         
+      name: "{{ item }}"
+      state: present
+    items:
+        - php-fpm
+        - php
+        - php-mysql
+  - copy:
+     src:       "php.ini"
+     dest:      /etc/php.ini
+  - copy:
+     src:       "www.conf"
+     dest:      /etc/php-fpm.d/www.conf
+    notify:
+      - Restart php-fpm
+  - copy:
+     src:       "info.php"
+     dest:      /usr/share/nginx/html/info.php 
+...

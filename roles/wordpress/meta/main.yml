@@ -1,0 +1,12 @@
+galaxy_info:
+  author: Ali Mirzaei
+  description: Provisioning wordpress machine
+  company: TriNimbus assignement
+
+dependencies:
+  - { role: EPEL-release }
+  - { role: yum-update }
+#  - { role: firewall-web }
+  - { role: nginx }
+  - { role: php }
+  - { role: mariadb }
